@@ -52,6 +52,8 @@ interface i2 extends i1{
 
 public class c1{
 	public static void main(String[] argv) throws IOException {	
+
+/*		
 		c2 o2 = new c2();
 		c4 o4 = new c4();
 		
@@ -67,5 +69,13 @@ public class c1{
 
 		System.out.println("End of IO");
 		
+*/		
+		try {
+			StdIOTester t1 = new StdIOTester();
+			t1.test1();
+		}catch (IOException IOe) {
+			System.err.println(IOe);
+		}
+
 	}
 }

@@ -41,12 +41,50 @@ class MyIOWriteFile {
 	}
 }
 
+/*
+class StringReader extends FilterReader{
+
+	protected BufferedReader super_reader;
+	
+	protected StringReader(FilterReader arg0) {
+		super(arg0);
+		super_reader = (BufferedReader) arg0;
+	}
+	
+
+	public String readLine() throws IOException{
+		return super_reader.readLine().toUpperCase();
+	}
+}
+*/
+class StdIOTester{
+	InputStream in = System.in;
+	PrintStream out = System.out;
+	InputStreamReader dsi = new InputStreamReader(in);
+	BufferedInputStream bs = new BufferedInputStream(in);
+	BufferedReader br = new BufferedReader(dsi);
+	
+	int max_buf = 128, read_len;
+	byte[] in_bytes = new byte[max_buf];
+	String line;
+	
+	void test1() throws IOException{
+		int val;
+		char c;
+		
+		while((line = br.readLine()) != null) {
+			out.print("read line:["+ line.toUpperCase() +"]\r\n");
+			
+		}
+	}
+		
+}
+
 public class MyIO {
 	
 	public MyIO() throws IOException {
 		System.out.println("in constructor of MyIO");
 		runMyIO();
-
 	}
 	
 	public void runMyIO() throws IOException {
