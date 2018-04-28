@@ -1,5 +1,8 @@
 package t3;
 
+import java.io.*;
+import java.util.*;
+
 abstract class c3{
 	abstract void print();
 }
@@ -9,27 +12,20 @@ abstract class c5{
 }
 
 class c2 extends c3 implements i1,i2, Intf1{
-	private
-		int a;
+	private int a;
 
-	public
-	void print() {
+	public void print() {
 		System.out.print("in c2\n");
 	}
-	/* (non-Javadoc)
-	 * @see t3.Intf1#i_print()
-	 */
-	@Override
+
 	public void i_print() {
 		System.out.print("in c2, i_print\n");
 	}
-	/* (non-Javadoc)
-	 * @see t3.Intf1#i_print_2()
-	 */
-	@Override
+
 	public void i_print_2() {
 		System.out.print("in c2, i_print_2\n");
 	}
+	
 }
 
 class c4 extends c3{
@@ -55,7 +51,7 @@ interface i2 extends i1{
 
 
 public class c1{
-	public static void main(String[] argv) {	
+	public static void main(String[] argv) throws IOException {	
 		c2 o2 = new c2();
 		c4 o4 = new c4();
 		
@@ -64,5 +60,12 @@ public class c1{
 		o4.print();
 		o2.i_print();
 		o2.i_print_2();
+		
+		System.out.print("Now for IO\n");
+		
+		MyIO myIO = new MyIO();
+
+		System.out.println("End of IO");
+		
 	}
 }
